@@ -1,0 +1,25 @@
+.row {
+    height: 100px;
+    display: flex;
+    /* tried using: justify-content: space-between;
+    column-gap: 30px;
+    flex-direction: row-reverse; */
+}
+.col {
+    background-color: dodgerblue;
+    flex: 1;
+    padding: 20px; 
+    margin: 10px;
+}
+.col-2 {
+    background-color: dodgerblue;
+    flex: 2;
+    padding: 20px;
+    margin: 10px;
+}
+.col-3 {
+    background-color: dodgerblue;
+    flex: 3;
+    padding: 20px;
+    margin: 10px;
+}

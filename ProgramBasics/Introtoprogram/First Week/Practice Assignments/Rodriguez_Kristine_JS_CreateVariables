@@ -1,0 +1,5 @@
+var riderHeight = "42 inches"
+var riderAge = 10
+console.log(riderHeight = riderAge)
+// rider must be at least 42 inches
+// rider must be 10 years old

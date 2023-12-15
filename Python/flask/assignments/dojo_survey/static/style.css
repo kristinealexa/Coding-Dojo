@@ -1,0 +1,20 @@
+* {
+    padding: 10;
+    margin: 10;
+    font-family: monospace;
+    font-size: 15px;
+}
+
+.result {
+    text-align: center;
+}
+
+.title {
+    font-size: 70px;
+    color: rgb(146, 230, 233);
+    background-color: black;
+}
+
+.btn {
+    background-color: rgb(146, 230, 233); ;
+}

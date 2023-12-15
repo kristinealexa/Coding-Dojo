@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playground</title>
+    <!-- <link rel= "stylesheet" href="{{ url_for('static', filename='static/style.css') }}"> -->
+    <style>
+        .box {
+            display: inline-block;
+            margin: 20px;
+            height: 200px;
+            width: 200px;
+            border: solid 2px black;
+            border-radius: 10px;
+            background-color: {{background}};
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align:center;">Welcome!</h1>
+    {% for i in range(0, num): %}
+    <div class="box"></div>
+    {% endfor %}
+</body>
+</html>

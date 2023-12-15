@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo Survey</title>
+    <!-- Did not to CSS bc did not want to make HTML long and ugly -->
+</head>
+<body>
+    <form action="/process" method="POST" class="form">
+        <h1>Dojo Survey</h1>
+        <div class="formInfo">
+            <label for="name">Name:</label>
+            <input type="text" name="name" class="">
+        </div>
+        <div>
+            <label for="location">Dojo Location:</label>
+            <select name="location" class="">
+                <option value="">Select</option>
+                <option value="Chicago">Chicago</option>
+                <option vaule="New York">New York</option>
+                <option vaule="San Francisco">San Francisco</option>
+                <option vaule="Guanajuato">Guanajuato</option>
+                <option vaule="Remote">Remote</option>
+            </select>
+        </div>
+        <div class="">
+            <label for="language">Favorite Language:</label>
+            <select name="language" class="">
+                <option value="">Select</option>
+                <option value="HTML">HTML</option>
+                <option value="Java">Java</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Python">Python</option>
+                <option value="C#">C#</option>
+            </select>
+        </div>
+        <div class="">
+            <label for="name">Comment (optional):</label>
+            <textarea name="comment" cols="30" rows="5" class=""></textarea>
+        </div>
+        <input type="submit" value="submit" class="btn">
+    </form>
+</body>
+</html>

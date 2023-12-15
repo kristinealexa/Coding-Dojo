@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Sasquatch Websighting</h1>
+    <h2>Hello {{ session['user_data']['first_name'] }}</h2>
+    <div>
+        <a href="/sightings/new">Report a Sighting</a>
+        <form action="/users/logout" method="post">
+            <button>Logout</button>
+        </form>
+    </div>
+    <h2>Reported Sightings</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Location</th>
+                <th>Date of Sighting</th>
+                <th>Reported by</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for sigh in all_sightings %}
+                <tr>
+                    <td>{{sigh.location}}</td>
+                    <td>{{sigh.date_sighting}}</td>
+                    <td>{{sigh.sighting_owner.first_name}}</td>
+                    <td>
+                        {% if sigh.sighting_owner.id == session['uuid'] %}
+                        <a href="/sightings/{{ sigh.id }}/edit">Edit</a>
+                        <a href="/sightings/{{ sigh.id }}/delete">Delete</a>
+
+                        {% else %}
+                        <a href="/sightings/{{ sigh.id }}">View</a>
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+</body>
+</html>

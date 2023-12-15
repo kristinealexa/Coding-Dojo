@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Dashboard</h1>
+    <h2>Hello {{ session['user_data']['first_name'] }}</h2>
+    <div>
+        <a href="/recipes/new">+ Create</a>
+        <form action="/users/logout" method="post">
+            <button>Logout</button>
+        </form>
+    </div>
+    <h2>ALL RECIPES</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Under</th>
+                <th>Posted By</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for recipe in all_recipes %}
+                <tr>
+                    <td>{{recipe.name}}</td>
+                    <td>{{recipe.under_30}}</td>
+                    <td>{{recipe.recipe_owner.first_name}}</td>
+                    <td>
+                        {% if recipe.recipe_owner.id == session['uuid'] %}
+                        <a href="/recipes/{{ recipe.id }}/edit">Edit</a>
+                        <a href="/recipes/{{ recipe.id }}/delete">Delete</a>
+
+                        {% else %}
+                        <a href="/recipes/{{ recipe.id }}">View</a>
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+</body>
+</html>

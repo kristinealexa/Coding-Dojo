@@ -1,0 +1,34 @@
+h1 {
+    color: mediumslateblue;
+    font-family: monospace;
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+}
+.container {
+    background-color: skyblue;
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    margin: 20px;
+    padding: 40px;
+}
+.container2 {
+    background-color: hotpink;
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    margin: 20px;
+    padding: 40px;
+}
+.container3 {
+    background-color: darkorange;
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    margin: 20px;
+    padding: 40px;
+}
+img {
+    height: 200px;
+}

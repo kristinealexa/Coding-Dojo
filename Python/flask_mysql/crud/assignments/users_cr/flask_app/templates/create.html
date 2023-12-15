@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add a New User</title>
+</head>
+<h1>Add a New User</h1>
+<a href="/read" method="POST">Home</a>
+<body>
+    <form action="/process" method="POST">
+        <label for="first_name">First name:</label><br>
+        <input type="text" id="first_name" name="first_name"><br>
+
+        <label for="last_name">Last name:</label><br>
+        <input type="text" id="last_name" name="last_name"><br>
+
+        <label for="email">Email:</label><br>
+        <input type="text" id="email" name="email"><br>
+        <button>Create</button>
+    </form>
+</body>
+</html>

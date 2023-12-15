@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+    <title>Dojo Survey Results</title>
+    <!-- Not a fan of putting css in HTML, having trouble linking CSS -->
+    <!-- <style>
+        * {
+            padding: 10;
+            margin: 10;
+            font-family: monospace;
+            font-size: 15px;
+        }
+
+        .result {
+            text-align: center;
+        }
+
+        .title {
+            font-size: 70px;
+            color: rgb(146, 230, 233);
+            background-color: black;
+        }
+
+        .btn {
+            background-color: rgb(146, 230, 233); ;
+        }
+    </style> -->
+</head>
+<body>
+    <div class="result">
+        <h1 class="title">Submitted Info</h1>
+        <p class="info">Name: {{session['name']}}</p>
+        <p class="info">Dojo Location: {{session['location']}}</p>
+        <p class="info">Favorite Language: {{session['language']}}</p>
+        <p class="info">Comment: {{session['comment']}}</p>
+    </div>
+    <a href="/" class="btn btn-outline-info">Go Back</a>
+    <!-- <input type="submit" value="Go Back" class="btn"> -->
+</body>
+</html>

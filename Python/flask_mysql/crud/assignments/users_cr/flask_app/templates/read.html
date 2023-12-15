@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Users</title>
+</head>
+<h1>All Users</h1>
+<body>
+    <table>
+        <tr>
+            <th>#</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Created At</th>
+        </tr>
+        {% for user in all_users %}
+        <tr>
+            <td>{{ user ['id'] }}</td>
+            <td>{{ user['first_name']}}</td>
+            <td>{{ user['last_name']}}</td>
+            <td>{{ user ['email'] }}</td>
+            <td>{{ user ['created_at'] }}</td>
+            <td><a href="/read/show/{{user.id}}">Show</a></td>
+            <td><a href="/update_form/{{user.id}}">Edit</a></td>
+            <td><a href="/read/delete/{{user.id}}">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/create" method="POST">Add a New User</a>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN & REG</title>
+</head>
+<body>
+    <h1>Register</h1>
+    <form action="/register/process" method="POST">
+        <label for="first_name">First Name:</label>
+        <input type="text" name="first_name" id="first_name">
+        {% for message in get_flashed_messages(category_filter=['err_users_first_name']) %}
+        <p class="err-msg">{{message}}</p>
+        {% endfor %}
+
+        <label for="last_name">Last Name:</label>
+        <input type="text" name="last_name" id="last_name">
+        {% for message in get_flashed_messages(category_filter=['err_users_last_name']) %}
+        <p class="err-msg">{{message}}</p>
+        {% endfor %}
+
+        <label for="email">Email:</label>
+        <input type="text" name="email" id="email">
+        {% for message in get_flashed_messages(category_filter=['err_users_email']) %}
+        <p class="err-msg">{{message}}</p>
+        {% endfor %}
+
+        <label for="password">Password:</label>
+        <input type="text" name="password" id="password">
+        {% for message in get_flashed_messages(category_filter=['err_users_password']) %}
+        <p class="err-msg">{{message}}</p>
+        {% endfor %}
+
+        <button type="submit">Register</button>
+    </form>
+
+    <h1>Login</h1>
+    <form action="/login/process", method="POST">
+        <!-- trying new method to see what i like best -->
+        <!-- {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                        {% for message in messages %}
+                            <p>{{message}}</p>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %} -->
+        <label for="email">Email:</label>
+        <input type="text" name="email">
+        {% for message in get_flashed_messages(category_filter=['err_users_email']) %}
+        <p class="err-msg">{{message}}</p>
+        {% endfor %}
+
+        <label for="password">Password:</label>
+        <input type="type" name="password">
+        {% for message in get_flashed_messages(category_filter=['err_users_password']) %}
+        <p class="err-msg">{{message}}</p>
+        {% endfor %}
+
+        <button>Login</button>
+    </form>
+</body>
+</html>

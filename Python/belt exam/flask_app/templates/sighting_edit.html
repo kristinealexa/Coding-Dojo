@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Edit Sighting</title>
+</head>
+<body>
+    <h2>Hello {{ session['user_data']['first_name'] }}</h2>
+    </form>
+    <a href="/dashboard">Dashboard</a>
+    <form action="/sightings/logout" method="POST">
+    <button>Logout</button>
+    </form>
+    <h1>Edit this Sighting</h1>
+    <form action="/sightings/{{sighting.id}}/update" method="POST">
+        <div>
+            <label for="location">Location:</label>
+            <input type="text" name="location" id="location" value="{{sighting.location}}">
+            {% for message in get_flashed_messages(category_filter=['err_sightings_location']) %}
+            <p class="err-msg">{{message}}</p>
+            {% endfor %}
+        </div>
+        <div>
+            <label for="date_sighting">Date of Sighting:</label>
+            <input type="date" id="date_sighting" name="date_sighting" value="{{sighting.date_sighting}}"></input>
+            {% for message in get_flashed_messages(category_filter=['err_sightings_date_sighting']) %}
+            <p class="err-msg">{{message}}</p>
+            {% endfor %}
+        </div>
+            <div>
+                <label for="number">Number of Sasquatches:</label>
+                <input type="number" name="number" value="{{sighting.number}}">
+                {% for message in get_flashed_messages(category_filter=['err_sightings_number']) %}
+                <p class="err-msg">{{ message }}</p>
+                {% endfor %}
+            </div>
+            <div>
+                <label for="description">Description:</label>
+                <input type="text" id="description" name="description" value="{{sighting.description}}">
+                {% for message in get_flashed_messages(category_filter=['err_sightings_description']) %}
+                <p class="err-msg">{{message}}</p>
+                {% endfor %}
+            </div>
+        </div>
+        <button>Submit</button>
+    </form>
+</body>
+</html>

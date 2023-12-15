@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Table</title>
+    
+    <style> 
+    table, th, td {
+        border: 2px solid;
+        width: 600px;
+        height: 50px;
+        text-align: center;
+}
+    th {
+        background-color: rgb(134, 175, 251);
+    } 
+
+    </style>
+</head>
+<body>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Full Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in student %}
+                <tr>
+                    <td>{{ student['first_name'] }}</td>
+                    <td>{{ student['last_name'] }}</td>
+                    <td>{{ student['first_name']}} {{student['last_name']}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+</html>

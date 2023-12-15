@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <title>ADD NEW RECIPE</title>
+</head>
+<body>
+    <h1>Add a New Recipe!</h1>
+    <form action="/recipe/create" method="POST">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name">
+            {% for message in get_flashed_messages(category_filter=['err_users_name']) %}
+            <p class="err-msg">{{message}}</p>
+            {% endfor %}
+        </div>
+        <div>
+            <label for="description">Description:</label>
+            <textarea id="description" name="description"></textarea>
+            {% for message in get_flashed_messages(category_filter=['err_users_description']) %}
+            <p class="err-msg">{{message}}</p>
+            {% endfor %}
+        </div>
+        <div>
+            <label for="instructions">Instructions:</label>
+            <textarea id="instructions" name="instructions"></textarea>
+            {% for message in get_flashed_messages(category_filter=['err_users_instructions']) %}
+            <p class="err-msg">{{message}}</p>
+            {% endfor %}
+        </div>
+        <div>
+            <label for="date_cooked">Date Cooked:</label>
+            <input type="date" id="date_cooked" name="date_cooked">
+            {% for message in get_flashed_messages(category_filter=['err_users_date_cooked']) %}
+            <p class="err-msg">{{message}}</p>
+            {% endfor %}
+
+            <label for="under_30">Under Thirty Minutes:</label>
+            <div>
+                <span>Yes</span>
+                <input type="radio" name="under_30" id="under_30" value="1">
+            </div>
+            <div>
+                <span>No</span>
+                <input type="radio" name="under_30" id="under_30" value="0">
+            </div>
+            {% for message in get_flashed_messages(category_filter=['err_users_under_30']) %}
+            <p class="err-msg">{{message}}</p>
+            {% endfor %}
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+            <a href="/dashboard">Back to recipes</a>
+            <form action="/users/logout" method="POST">
+                <button>Logout</button>
+            </form>
+
+
+</body>
+</html>
